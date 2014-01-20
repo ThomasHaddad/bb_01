@@ -1,13 +1,13 @@
-alert('caca');
-C:\Users\Mcdad\Dropbox\Ecole Multimedia\DEV1\backbone
+
 
 
 // EACH
-_.each(function(){
+var test1=_.each(function(){
 	if(i%3===0){
 		console.log(i);
 	}
 });
+test1();
 
 // BIND
 var func=function(){console.log(this)};
@@ -19,7 +19,7 @@ f();
 var b=function(){
 	console.log(this);
 }
-b()b();
+b();b();
 var thro=_.throttle(b,500);
 thro();thro(); // attend 500 ms avant de rappeler la fonction une deuxième fois;
 
@@ -46,12 +46,11 @@ user.set('name','toto'); // redéfinit l'user
 user.save(); // update la bdd en spécifiant une URL
 
 // extend
-_.extend({
-	name:'moe',
+_.extend({name:'moe'},
 	{
 		age:50,
 	}
-});
+);
 
 var MyModel= Backbone.Model.extend({
 	over_18:function(){
@@ -67,3 +66,4 @@ myModel.set({
 myModel.over_18();
 
 console.log('toto');
+console.log('hello');
