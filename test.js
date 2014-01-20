@@ -2,12 +2,11 @@
 
 
 // EACH
-var test1=_.each(function(){
+_.each(function(){
 	if(i%3===0){
 		console.log(i);
 	}
 });
-test1();
 
 // BIND
 var func=function(){console.log(this)};
@@ -43,7 +42,7 @@ user.get('name');// récupère le nom
 user.set('name','toto'); // redéfinit l'user
 
 // partie serveur
-user.save(); // update la bdd en spécifiant une URL
+//user.save(); // update la bdd en spécifiant une URL
 
 // extend
 _.extend({name:'moe'},
@@ -66,3 +65,21 @@ myModel.set({
 myModel.over_18();
 
 console.log('toto');
+
+
+// Exo
+var Task = Backbone.Model.extend({
+	defaults:{
+		name:'I have to study',
+		completed:false
+	},	
+	finished:function(){
+		console.log(this.get('completed')) ;
+	}
+});
+
+var task1 = new Task();
+task1.attributes;
+task1.finished();
+task1.set({'completed':true});
+task1.finished();
