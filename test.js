@@ -12,15 +12,15 @@ _.each(function(){
 var func=function(){console.log(this)};
 var obj={a:2};
 var f=_.bind(func,obj);
-f();
+//f();
 
 // THROTTLE
 var b=function(){
 	console.log(this);
 }
-b();b();
+//b();b();
 var thro=_.throttle(b,500);
-thro();thro(); // attend 500 ms avant de rappeler la fonction une deuxième fois;
+//thro();thro(); // attend 500 ms avant de rappeler la fonction une deuxième fois;
 
 // DEBOUNCE 
 
@@ -69,8 +69,14 @@ console.log('toto');
 
 // Exo
 var Task = Backbone.Model.extend({
+	initialize:function(){
+		this.on('change:completed',this.onCompleteChange());
+	},
+	onCompleteChange:function(){
+		console.log('modification done on '+this.get('name'));
+	},
 	defaults:{
-		name:'I have to study',
+		name:'first try',
 		completed:false
 	},	
 	finished:function(){
