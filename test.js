@@ -65,3 +65,5 @@ myModel.set({
 	age:26,
 });
 myModel.over_18();
+
+console.log('toto');
