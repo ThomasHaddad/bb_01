@@ -81,11 +81,18 @@ var Task = Backbone.Model.extend({
 	},	
 	finished:function(){
 		console.log(this.get('completed')) ;
+	},
+	validate:function(attributes,options){
+		//console.log(attributes);
+		if(typeof(attributes.completed)!=='boolean'){
+			console.log('do not set bad values!!!!');
+		}
 	}
 });
 
 var task1 = new Task();
 task1.attributes;
 task1.finished();
-task1.set({'completed':true});
+task1.set({'completed':true,validate:true});
 task1.finished();
+task1.save();
