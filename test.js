@@ -66,4 +66,3 @@ myModel.set({
 myModel.over_18();
 
 console.log('toto');
-console.log('hello');
